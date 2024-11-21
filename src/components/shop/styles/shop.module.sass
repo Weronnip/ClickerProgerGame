@@ -1,0 +1,65 @@
+.wrapper
+    z-index: 1
+    left: 25%
+    bottom: 5px
+    row-gap: 15px
+    width: 1000px
+    display: grid
+    height: 800px
+    position: absolute
+    place-items: center
+    place-content: center
+    background-color: #2abe6379
+    grid-template-columns: repeat(3, 3fr)
+
+
+    .title
+        bottom: 94%
+        color: #fff
+        font-size: 32px
+        font-weight: 400
+        position: absolute
+
+    .items
+        width: 200px
+        height: 200px
+        display: flex
+        align-items: center
+        flex-direction: column
+        justify-content: center
+        border: 2px solid #0eff97
+
+    .close_windows
+        left: 95%
+        bottom: 95%
+        color: #fff
+        border: none
+        cursor: pointer
+        font-size: 22px
+        position: absolute
+        background-color: transparent
+
+
+    .img_item
+        width: 100px
+        height: 100px
+
+    .buy_item
+        border: none
+        font-size: 16px
+        transition: .3s
+        margin-top: 10px
+        color: #1c1c1c
+        padding: 5px 12px
+        background-color: #4ced74
+
+        &.bought
+            color: #fff
+
+        &:hover
+            color: #fff
+            cursor: pointer
+            border-radius: 10px
+            background-color: #39a053
+
+    

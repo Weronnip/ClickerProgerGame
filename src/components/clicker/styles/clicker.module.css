@@ -1,0 +1,48 @@
+.wrapper {
+  left: 50%;
+  z-index: 0;
+  bottom: 50%;
+  display: flex;
+  position: absolute;
+  flex-direction: column;
+}
+.wrapper .bth_clicker {
+  border: none;
+  width: 150px;
+  display: flex;
+  color: #fff;
+  height: 150px;
+  transition: 0.1s;
+  background-color: transparent;
+}
+.wrapper .bth_clicker .characterImage {
+  width: 150px;
+  height: 150px;
+  margin-left: 15px;
+}
+.wrapper .bth_clicker:active {
+  scale: 1.5;
+}
+.wrapper .bth_reset {
+  left: 19%;
+  top: 160%;
+  border: none;
+  color: #fff;
+  transition: 0.3s;
+  padding: 5px 50px;
+  border-radius: 5px;
+  position: absolute;
+  background-color: #ec4646;
+}
+.wrapper .bth_reset:hover {
+  border-radius: 10px;
+  background-color: #af3232;
+}
+.wrapper .balance {
+  left: 10%;
+  top: 120%;
+  width: 500px;
+  color: #fff;
+  font-size: 32px;
+  position: absolute;
+}/*# sourceMappingURL=clicker.module.css.map */
