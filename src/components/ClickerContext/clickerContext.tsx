@@ -1,4 +1,3 @@
-/* eslint-disable react-refresh/only-export-components */
 import { ClickerContextType } from './types/ClickerContext.types';
 import { createContext, useContext, useState, ReactNode } from 'react';
 
