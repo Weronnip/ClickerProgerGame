@@ -1,13 +1,10 @@
+import App from './App.tsx'
+import './index.css'
 import { StrictMode } from 'react'
 import { createRoot } from 'react-dom/client'
-import './index.css'
-import App from './App.tsx'
-import { ClickerProvider } from './components/ClickerContext/clickerContext.tsx'
 
 createRoot(document.getElementById('root')!).render(
   <StrictMode>
-    <ClickerProvider>
-      <App />
-    </ClickerProvider>
+    <App />
   </StrictMode>,
 )

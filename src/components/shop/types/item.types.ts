@@ -6,4 +6,4 @@ export interface Items {
     price: number;
     bonus: number;
     bought: boolean;
-}
+  }

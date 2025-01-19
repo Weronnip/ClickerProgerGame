@@ -45,4 +45,12 @@
   color: #fff;
   font-size: 32px;
   position: absolute;
+}
+.wrapper .power {
+  left: 10%;
+  top: 160%;
+  width: 500px;
+  color: #fff;
+  font-size: 32px;
+  position: absolute;
 }/*# sourceMappingURL=clicker.module.css.map */

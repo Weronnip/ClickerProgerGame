@@ -1,18 +1,17 @@
-import { Clicker } from "./components/clicker/clicker"
-import { Layout } from "./components/layout/layout"
-// import { BgGameMusic } from "./components/MusicGame/musicgame"
-import { ClickerProvider } from "./components/ClickerContext/clickerContext"
+import { Layout } from "./components/layout/layout";
+import { Clicker } from "./components/clicker/clicker";
+import { ClickerProvider } from "./components/context/ClickerContext/clickerContext";
+import { ShopProvider } from "./components/context/ShopContext/shopContext";
 
 function App() {
-
   return (
-    <>
-      <ClickerProvider>
-        <Layout />
-          <Clicker />
-      </ClickerProvider>
-    </>
-  )
+    <ClickerProvider>
+      <ShopProvider>
+        <Layout /> 
+        <Clicker />
+      </ShopProvider>
+    </ClickerProvider>
+  );
 }
 
-export default App
+export default App;

@@ -1,8 +1,8 @@
 import { useState, useEffect } from 'react';
 
-export function useBalance(initialBalance = 0) {
+export function useBalance(initialBalance: number) {
     const [balance, setBalance] = useState<number>(() => {
-        const savedBalance = localStorage.getItem('Balance');
+    const savedBalance = localStorage.getItem('Balance');
         return savedBalance ? parseInt(savedBalance) : initialBalance;
     });
 
@@ -10,9 +10,9 @@ export function useBalance(initialBalance = 0) {
         localStorage.setItem('Balance', balance.toString());
     }, [balance]);
 
-    const updateBalance = (amount: number) => {
-        setBalance(prevBalance => Math.max(prevBalance + amount, 0));
-    };
+    function updateBalance(amount: number) {
+        setBalance(prev => prev + amount);
+    }
 
     function resetBalance() {
         setBalance(initialBalance)

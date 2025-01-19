@@ -1,7 +1,8 @@
 import { useState } from 'react';
 import { ShopItem } from '../../shop/shop';
 import styles from './styles/sidebar.module.css';
-import { useClickerContext } from '../../ClickerContext/clickerContext';
+// import { useShopContext } from '../../context/ShopContext/shopContext';
+import { useClickerContext } from '../../context/ClickerContext/clickerContext';
 
 export function Sidebar() {
     const [isOpenShop, setIsOpenShop] = useState(false);
