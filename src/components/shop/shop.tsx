@@ -12,34 +12,34 @@ export function ShopItem({
     const [items, setItems] = useState<Items[]>([
         {
             item_id: 1,
-            name_item: 'UP Clicker +10',
+            name_item: 'UP Clicker +3',
             description: 'up clicker level!',
-            price: 30,
+            price: 20,
             item_img: 'https://i.pinimg.com/originals/dc/ec/92/dcec92cb65015e4d9a83ec238c683dd8.gif',
             bought: false,
             bonus: 3
         },
         {
             item_id: 2,
-            name_item: 'UP Clicker +50',
+            name_item: 'UP Clicker +4',
             description: 'up clicker level!',
-            price: 45,
+            price: 35,
             item_img: 'https://i.pinimg.com/originals/dc/ec/92/dcec92cb65015e4d9a83ec238c683dd8.gif',
             bought: false,
             bonus: 4
         },
         {
             item_id: 3,
-            name_item: 'UP Clicker +100',
+            name_item: 'UP Clicker +5.5',
             description: 'up clicker level!',
-            price: 50,
+            price: 55,
             item_img: 'https://i.pinimg.com/originals/ea/d5/98/ead5980765551c53b7d861ca4a8f2988.gif',
             bought: false,
             bonus: 5.5
         },
         {
             item_id: 4,
-            name_item: 'Super CLICK',
+            name_item: 'Super CLICK +10',
             description: 'Super skill!',
             price: 70,
             item_img: 'https://i.pinimg.com/originals/48/2f/f3/482ff37c43387b76de1161edb4d04977.gif',
@@ -50,46 +50,46 @@ export function ShopItem({
             item_id: 5,
             name_item: 'Cat proger',
             description: 'Hero cat clicker!',
-            price: 80,
+            price: 100,
             item_img: 'https://i.pinimg.com/originals/e8/d0/f1/e8d0f1794e2520ac2367c1d21c0966e9.gif',
             bought: false,
-            bonus: 20
+            bonus: 0
         },
         {
             item_id: 6,
             name_item: 'Proger Junior',
             description: 'Hero Junior proger clicker!',
-            price: 90,
+            price: 190,
             item_img: 'https://i.pinimg.com/736x/89/e8/26/89e8266d4108cb2ae61a94608d033566.jpg',
             bought: false,
-            bonus: 30
+            bonus: 0
         },
         {
             item_id: 7,
             name_item: 'Proger middle',
             description: 'Hero middle proger clicker!',
-            price: 110,
+            price: 210,
             item_img: 'https://i.pinimg.com/474x/8c/2b/15/8c2b15ee828ef37b2494c777fd6d7480.jpg',
             bought: false,
-            bonus: 40
+            bonus: 0
         },
         {
             item_id: 8,
             name_item: 'Proger senior',
             description: 'Hero senior proger clicker!',
-            price: 160,
+            price: 360,
             item_img: 'https://i.pinimg.com/474x/b1/ba/9b/b1ba9b39ff081cb849e30d4b5aecdaa3.jpg',
             bought: false,
-            bonus: 50
+            bonus: 0
         },
         {
             item_id: 9,
             name_item: 'HACKER CLICKER',
             description: 'Super cheater ProgCoin!',
-            price: 210,
+            price: 910,
             item_img: 'https://i.pinimg.com/originals/90/52/50/90525082e9d7cd55520f4f287067955b.gif',
             bought: false,
-            bonus: 60
+            bonus: 0
         }
 
     ]);
@@ -98,7 +98,6 @@ export function ShopItem({
         const item = items.find((item) => item.item_id === item_id);
     
         if (item && !item.bought) {
-            // Обновляем статус товара, помечаем его как купленный
             setItems(
                 items.map((i) => {
                     if (i.item_id === item_id && !i.bought) {

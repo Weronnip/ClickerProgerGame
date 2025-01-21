@@ -19,7 +19,6 @@ export function ClickerProvider({ children }: { children: ReactNode }) {
         if (balance >= price) {
             console.log(`Покупка: Цена = ${price}, Бонус = ${bonus}, ID товара = ${item_id}`); // Логирование
             updateBalance(-price); // Вычитаем цену
-            increaseClickPower(bonus); // Увеличиваем мощность клика
             switch (item_id) {
                 case 5:
                     setCharacterImage("https://i.pinimg.com/originals/e8/d0/f1/e8d0f1794e2520ac2367c1d21c0966e9.gif");
