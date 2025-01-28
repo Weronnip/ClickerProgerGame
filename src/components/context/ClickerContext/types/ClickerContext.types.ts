@@ -6,5 +6,5 @@ export type ClickerContextType = {
     setClickPower: (bonus: number) => void;
     characterImage: string;
     setCharacterImage: (image: string) => void;
-    handleItemBuy: (price: number, bonus: number, item_id: number) => void; // Добавляем функцию для покупки
+    handleItemBuy: (price: number, bonus: number, item_id: number) => void;
 };

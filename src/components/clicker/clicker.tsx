@@ -1,14 +1,31 @@
-import { useState } from "react";
+import { useState, useRef } from "react";
 import { ShopItem } from "../shop/shop";
 import styles from "./styles/clicker.module.css";
 import { useClickerContext } from "../context/ClickerContext/clickerContext";
 
 export function Clicker() {
     const [isOpen, setIsOpen] = useState(false);
+    const [isStart, setIsStart] = useState(false);
+    const intervalRef = useRef<number | null>();
     const { balance, updateBalance, clickPower, characterImage, setClickPower, setCharacterImage } = useClickerContext();
 
     function handleToggleOpen() {
         setIsOpen(!isOpen);
+    }
+
+    function AutoClicker() {
+        if (isStart) {
+            if (intervalRef.current) {
+                clearInterval(intervalRef.current);
+                intervalRef.current = null;
+            }
+            setIsStart(false);
+        } else {
+            intervalRef.current = window.setInterval(() => {
+                updateBalance(clickPower);
+            }, 1000);
+            setIsStart(true);
+        }
     }
 
     function handleClick() {
@@ -18,7 +35,7 @@ export function Clicker() {
     function handleItemBuy(price: number, item_id: number, bonus: number) {
         if (balance >= price) {
             updateBalance(-price); 
-            setClickPower( clickPower + bonus)
+            setClickPower(clickPower + bonus)
 
             switch (item_id) {
                 case 5:
@@ -46,9 +63,9 @@ export function Clicker() {
                     <img src={characterImage} alt="clicker here" className={styles.characterImage} />
                 </button>
                 <span className={styles.balance}>Ваш баланс: {balance}</span>
+                <span className={styles.auto_clicker} onClick={AutoClicker}>Авто клик: {isStart ? 'Дюпает' : 'Спит'}</span>
                 <span className={styles.power}>Мощность клика: {clickPower}</span>
             </section>
-
             {isOpen && <ShopItem onClose={handleToggleOpen} onItemBuy={handleItemBuy} />}
         </>
     );

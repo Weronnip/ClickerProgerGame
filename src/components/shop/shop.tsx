@@ -85,7 +85,7 @@ export function ShopItem({
         {
             item_id: 9,
             name_item: 'HACKER CLICKER',
-            description: 'Super cheater ProgCoin!',
+            description: 'Super autoclick cheater ProgCoin!',
             price: 910,
             item_img: 'https://i.pinimg.com/originals/90/52/50/90525082e9d7cd55520f4f287067955b.gif',
             bought: false,
@@ -107,7 +107,7 @@ export function ShopItem({
                 })
             );
             console.log("Updating item:", item_id);
-            onItemBuy(price, bonus, item_id); // Передаем бонус и ID предмета в функцию покупки
+            onItemBuy(price, bonus, item_id);
         }
     }
 
@@ -127,7 +127,7 @@ export function ShopItem({
                             className={styles.buy_item}
                             onClick={() => handleBuy(item.item_id, item.price, item.bonus)}
                         >
-                            {item.bought ? 'Bought' : `Buy: ${item.price}`}
+                            {item.bought ? `Buy more: ${item.price}` : `Buy: ${item.price}`}
                         </button>
                     </div>
                 ))}

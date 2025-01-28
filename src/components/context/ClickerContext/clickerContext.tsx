@@ -5,8 +5,8 @@ import { createContext, useContext, useState, ReactNode } from 'react';
 const ClickerContext = createContext<ClickerContextType | undefined>(undefined);
 
 export function ClickerProvider({ children }: { children: ReactNode }) {
-    const { balance, updateBalance, resetBalance } = useBalance(0);
     const [clickPower, setClickPower] = useState<number>(1);
+    const { balance, updateBalance, resetBalance } = useBalance(0);
     const [characterImage, setCharacterImage] = useState<string>(
         'https://i.pinimg.com/originals/80/7b/5c/807b5c4b02e765bb4930b7c66662ef4b.gif'
     );
@@ -15,10 +15,9 @@ export function ClickerProvider({ children }: { children: ReactNode }) {
         setClickPower((prev) => prev + bonus);
     }
 
-    function handleItemBuy(price: number, bonus: number, item_id: number) {
+    function handleItemBuy(price: number, item_id: number) {
         if (balance >= price) {
-            console.log(`Покупка: Цена = ${price}, Бонус = ${bonus}, ID товара = ${item_id}`); // Логирование
-            updateBalance(-price); // Вычитаем цену
+            updateBalance(-price);
             switch (item_id) {
                 case 5:
                     setCharacterImage("https://i.pinimg.com/originals/e8/d0/f1/e8d0f1794e2520ac2367c1d21c0966e9.gif");

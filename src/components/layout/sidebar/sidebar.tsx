@@ -1,14 +1,13 @@
-/* eslint-disable @typescript-eslint/no-explicit-any */
 import { useState } from 'react';
 import { ShopItem } from '../../shop/shop';
 import styles from './styles/sidebar.module.css';
-// import { useShopContext } from '../../context/ShopContext/shopContext';
 import { useClickerContext } from '../../context/ClickerContext/clickerContext';
 
 export function Sidebar() {
     const [isOpenShop, setIsOpenShop] = useState(false);
     const [isOpenSettings, setIsOpenSettings] = useState(false);
-    const { balance, updateBalance, resetBalance, characterImage, clickPower, setClickPower, setCharacterImage } = useClickerContext();
+    const { balance, updateBalance, resetBalance, characterImage,
+        clickPower, setClickPower, setCharacterImage } = useClickerContext();
 
     function handleToggleShop() {
         setIsOpenShop(!isOpenShop)
@@ -21,7 +20,7 @@ export function Sidebar() {
     function handleItemBuy(price: number, item_id: number, bonus: number) {
         if (balance >= price) {
             updateBalance(-price); 
-            setClickPower( clickPower + bonus)
+            setClickPower(clickPower + bonus)
 
             switch (item_id) {
                 case 5:
